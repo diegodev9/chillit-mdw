@@ -15,6 +15,6 @@ class ApplicationController < ActionController::API
   end
   
   def check_key
-    render not_found unless params[:key] == Rails.application.credentials.chillit_token[:token] # token en credentials
+    render not_found unless params[:key] == Rails.application.credentials.chillit_token # token en credentials
   end
 end
