@@ -2,7 +2,7 @@
 
 class Chillit
   def self.api_key
-    ENV['HUBSPOT_API_KEY'] # api_key guardada en credentials
+    Rails.application.credentials['HUBSPOT_API_KEY'] # api_key guardada en credentials
   end
 
   def self.client
@@ -25,13 +25,5 @@ class Chillit
       'trabajar': '613991089',
       'otras': '613966096'
     }
-  end
-
-  def self.urls
-    ['www.chillit.com', 'chillit.com', 'labs.omatic.com.ar', 'lab9.omatic.com.ar'].freeze
-  end
-
-  def self.token
-    'LzZmUul5D28pEvsuKsFKLFsZivQdz3yZzmb9eYicFyvh26OC3EI9kVPThShHu6Ps'.freeze
   end
 end
