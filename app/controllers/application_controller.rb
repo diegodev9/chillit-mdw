@@ -11,10 +11,10 @@ class ApplicationController < ActionController::API
   private
 
   def check_uri
-    not_found unless Chillit.urls.include?(URI(request.referer).host.to_s) # ip server web en credentials
+    not_found unless ENV['URL_CHILLIT'].include?(URI(request.referer).host.to_s) # ip server web en credentials
   end
   
   def check_key
-    not_found unless params[:key] == Chillit.token # token en credentials
+    not_found unless params[:key] == ENV['CHILLIT_TOKEN'] # token en credentials
   end
 end

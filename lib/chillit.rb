@@ -2,7 +2,7 @@
 
 class Chillit
   def self.api_key
-    Rails.application.credentials.hubspot_api_key # api_key guardada en credentials
+    ENV['HUBSPOT_API_KEY'] # api_key guardada en credentials
   end
 
   def self.client
