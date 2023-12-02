@@ -30,4 +30,8 @@ class Chillit
   def self.urls
     ['www.chillit.com', 'chillit.com', 'labs.omatic.com.ar', 'lab9.omatic.com.ar'].freeze
   end
+
+  def self.token
+    'LzZmUul5D28pEvsuKsFKLFsZivQdz3yZzmb9eYicFyvh26OC3EI9kVPThShHu6Ps'.freeze
+  end
 end
