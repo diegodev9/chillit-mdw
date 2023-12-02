@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-  before_action :check_uri
+  # before_action :check_uri
   before_action :check_key
 
   def not_found

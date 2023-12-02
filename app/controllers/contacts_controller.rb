@@ -20,7 +20,7 @@ class ContactsController < ApplicationController
     api_response = Chillit.client.crm.contacts.basic_api.create(body: body_)
     puts api_response
 
-    response.status = 200
+    render json: { status: :created }
   end
 
   private
