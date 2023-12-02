@@ -26,4 +26,8 @@ class Chillit
       'otras': '613966096'
     }
   end
+
+  def self.urls
+    ['www.chillit.com', 'chillit.com', 'labs.omatic.com.ar', 'lab9.omatic.com.ar'].freeze
+  end
 end

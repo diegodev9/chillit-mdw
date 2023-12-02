@@ -9,7 +9,7 @@ class ApplicationController < ActionController::API
   private
 
   def check_uri
-    not_found unless Rails.application.credentials.url_chillit.include?(URI(request.referer).host.to_s) # ip server web en credentials
+    not_found unless Chillit.urls.include?(URI(request.referer).host.to_s) # ip server web en credentials
   end
   
   def check_key
