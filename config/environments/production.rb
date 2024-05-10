@@ -85,11 +85,11 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
-    address: ENV['COCYAR_SMTP'],
-    port: ENV['COCYAR_PORT'],
+    address: 'smtp-relay.brevo.com',
+    port: 587,
     authentication: :plain,
-    user_name: ENV['COCYAR_USER'], # See: https://account.sendinblue.com/advanced/api
-    password: ENV['COCYAR_PASSWORD'], # See: https://account.sendinblue.com/advanced/api
+    user_name: '7489ea001@smtp-brevo.com', # See: https://account.sendinblue.com/advanced/api
+    password: 'yG2kn9Lva7ORcYWD', # See: https://account.sendinblue.com/advanced/api
     enable_starttls_auto: true
   }
 end
