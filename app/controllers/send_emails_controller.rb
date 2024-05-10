@@ -3,6 +3,7 @@ class SendEmailsController < ApplicationController
 
   def create
     SendEmailsMailer.email(params[:email]).deliver_now
+    render json: { message: 'recibido' }, status: :ok
   end
 
   private
