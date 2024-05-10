@@ -81,4 +81,15 @@ Rails.application.configure do
   # ]
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
+
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    address: ENV['COCYAR_SMTP'],
+    port: ENV['COCYAR_PORT'],
+    authentication: :plain,
+    user_name: ENV['COCYAR_USER'], # See: https://account.sendinblue.com/advanced/api
+    password: ENV['COCYAR_PASSWORD'], # See: https://account.sendinblue.com/advanced/api
+    enable_starttls_auto: true
+  }
 end

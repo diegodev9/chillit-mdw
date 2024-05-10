@@ -1,24 +1,9 @@
 class SendEmailsMailer < ApplicationMailer
+  default from: 'info@cocyar.com'
+
   def email(subscriber)
     @subscriber = subscriber
-
-    # Initialize a new email
-    @email = SibApiV3Sdk::SendSmtpEmail.new
-    # Setup email attributes
-    @email.sender = {
-      "name": 'Info Cocyar',
-      "email": 'info@cocyar.com'
-    }
-    @email.to = [{ "email": @subscriber }]
-    @email.html_content = html
-    @email.text_content = text
-    @email.subject = 'Gracias por completar el formulario'
-    @email.reply_to = {
-      "email": 'info@cocyar.com',
-      "name": 'Info Cocyar'
-    }
-    # Send your email
-    @send_in_blue.send_transac_email(@email)
+    mail(to: @subscriber, subject: 'Gracias por completar el formulario')
   end
 
   private
