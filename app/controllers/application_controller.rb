@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::API
   before_action :check_uri
-  before_action :check_key
 
   require 'uri'
 
@@ -12,9 +11,6 @@ class ApplicationController < ActionController::API
 
   def check_uri
     not_found unless ENV['CHILLIT_URL'].include?(URI(request.referer).host.to_s) # ip server web en credentials
-  end
-  
-  def check_key
-    not_found unless params[:key] == ENV['CHILLIT_TOKEN'] # token en credentials
+    not_found unless ENV['COCYAR_URL'].include?(URI(request.referer).host.to_s) # ip server web en credentials
   end
 end

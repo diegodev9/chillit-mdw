@@ -31,6 +31,7 @@ gem 'rack-cors'
 
 gem 'dotenv-rails'
 gem 'hubspot-api-client'
+gem 'sib-api-v3-sdk'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

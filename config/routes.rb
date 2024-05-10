@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'send_emails/create'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -9,4 +10,5 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   post '/create_contact', to: 'contacts#create'
+  post '/send_email', to: 'send_emails#create'
 end

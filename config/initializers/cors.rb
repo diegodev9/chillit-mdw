@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-     origins "*.labs.omatic.com.ar", "*.lab9.omatic.com.ar", "*.chillit.com"
+     origins "*.labs.omatic.com.ar", "*.lab9.omatic.com.ar", "*.chillit.com", "*.cocyar.com"
       resource "*",
       headers: :any,
       methods: [:get, :post, :put, :patch, :delete, :options, :head]

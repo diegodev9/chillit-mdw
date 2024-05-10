@@ -1,4 +1,6 @@
 class ContactsController < ApplicationController
+  before_action :check_key
+
   require 'hubspot-api-client'
 
   def create
@@ -24,6 +26,10 @@ class ContactsController < ApplicationController
   end
 
   private
+
+  def check_key
+    not_found unless params[:key] == ENV['CHILLIT_TOKEN'] # token en credentials
+  end
 
   def find_owner(reason)
     reasons = %w[distribuidor tienda marca trabajar otras]
