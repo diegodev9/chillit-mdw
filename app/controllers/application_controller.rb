@@ -20,6 +20,5 @@ class ApplicationController < ActionController::API
 
   def check_uri
     not_found unless APPROVED_URL.include?(URI(request.referer).host.to_s) # ip server web en credentials
-    not_found unless APPROVED_URL.include?(URI(request.referer).host.to_s) # ip server web en credentials
   end
 end
